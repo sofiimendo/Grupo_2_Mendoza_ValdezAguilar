@@ -67,9 +67,6 @@ function mostrarTodosLosUsuarios() {
     return usuarios;
 }
 
-// 🧪 Prueba opcional
-// console.log("👥 Usuarios:", mostrarTodosLosUsuarios());
-
 /**
  * 3c) buscarUsuario(email)
  * Busca un usuario dentro del array "usuarios" a partir
@@ -143,21 +140,23 @@ function borrarUsuario(nombre, email) {
     // 6) Confirmación
     console.log("🗑️ Usuario eliminado con éxito:", usuarioEliminado[0]);
 }
+
 /**
  * En este punto se desarrollaron las funciones necesarias para la gestión de usuarios del sistema de biblioteca.
-
+ *
  * Se implementaron funciones para:
  * - Registrar nuevos usuarios validando que el email no se repita.
  * - Mostrar el listado completo de usuarios registrados.
  * - Buscar un usuario específico a partir de su email utilizando una búsqueda lineal.
  * - Eliminar un usuario validando previamente que no tenga libros prestados, para mantener la integridad del sistema.
-
+ *
  * Durante el desarrollo se aplicaron conceptos fundamentales de JavaScript como:
  * - Uso de arrays y objetos.
  * - Recorridos con ciclos for.
  * - Manejo de strings (toLowerCase, trim).
  * - Condicionales y control de flujo.
  */
+
 /**
  * ======================================================
  * ✅ 4) SISTEMA DE PRÉSTAMOS
@@ -269,18 +268,18 @@ function devolverLibro(idLibro, idUsuario) {
 
     console.log(`✅ Devolución realizada: "${libro.titulo}" fue devuelto por ${usuario.nombre}`);
 }
+
 /**
- * En este punto se desarrolló el sistema de préstamos de libros de la biblioteca, permitiendo registrar la entrega y devolución de libros a los usuarios.
-
+ * En este punto se desarrolló el sistema de préstamos de libros de la biblioteca,
+ * permitiendo registrar la entrega y devolución de libros a los usuarios.
+ *
  * Se implementaron las siguientes funciones:
- * - prestarLibro(idLibro, idUsuario): verifica que el libro exista,
- *   que esté disponible y que el usuario exista. Luego marca el libro
- *   como no disponible y agrega su ID al listado de libros prestados
- *   del usuario.
-
+ * - prestarLibro(idLibro, idUsuario): verifica que el libro exista, que esté disponible y que el usuario exista.
+ *   Luego marca el libro como no disponible y agrega su ID al listado de libros prestados del usuario.
+ *
  * - devolverLibro(idLibro, idUsuario): verifica que el libro y el usuario existan y que el usuario tenga ese libro prestado.
- *   Luego marca el libro como disponible y elimina su ID del array de librosPrestados del usuario.
-
+ *   Luego marca el libro como disponible y elimina su ID del array librosPrestados del usuario.
+ *
  * Durante el desarrollo se aplicaron conceptos como:
  * - Búsqueda manual en arrays.
  * - Uso de condicionales para validaciones.
