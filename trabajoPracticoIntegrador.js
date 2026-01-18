@@ -581,14 +581,14 @@ function normalizarDatos() {
  * ✅ 9) INTERFAZ DE USUARIO POR CONSOLA
  * ======================================================
  * menuPrincipal()
- * Muestra un menú de opciones y permite interactuar con el sistema.
+ * Muestra un menú una vez, ejecuta la opción y luego pregunta
+ * si el usuario quiere volver al menú o salir.
  */
 
 function menuPrincipal() {
-    let opcion = "";
+    let seguir = "s";
 
-    // El menú se repite hasta que el usuario elija salir
-    while (opcion !== "0") {
+    while (seguir === "s") {
         console.log("\n📚 SISTEMA DE GESTIÓN DE BIBLIOTECA");
         console.log("1️⃣ Registrar usuario");
         console.log("2️⃣ Mostrar todos los usuarios");
@@ -600,7 +600,7 @@ function menuPrincipal() {
         console.log("8️⃣ Normalizar datos");
         console.log("0️⃣ Salir");
 
-        opcion = prompt("👉 Elegí una opción: ");
+        let opcion = prompt("👉 Elegí una opción: ").trim();
 
         switch (opcion) {
             case "1": {
@@ -655,12 +655,21 @@ function menuPrincipal() {
 
             case "0": {
                 console.log("👋 Saliendo del sistema. ¡Gracias!");
-                break;
+                return; // ✅ corta la función y termina el programa
             }
 
             default: {
                 console.log("❌ Opción inválida. Intentá nuevamente.");
             }
+        }
+
+        // ✅ Pregunta final (en vez de mostrar el menú automáticamente)
+        seguir = prompt("\n🔁 ¿Querés volver al menú? (s/n): ").toLowerCase().trim();
+
+        // Por si escriben cualquier cosa
+        if (seguir !== "s") {
+            console.log("👋 Listo, saliendo del sistema. ¡Gracias!");
+            break;
         }
     }
 }
