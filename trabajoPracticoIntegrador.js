@@ -494,6 +494,50 @@ function librosConPalabrasEnTitulo() {
 
 /**
  * ======================================================
+ * ✅ 7) CÁLCULOS ESTADÍSTICOS
+ * ======================================================
+ */
+
+function calcularEstadisticas() {
+    let anios = libros.map(libro => libro.anio);
+
+    let promedio = Math.round(
+        anios.reduce((acc, anio) => acc + anio, 0) / anios.length
+    );
+
+    let contador = anios.reduce((acc, anio) => {
+        acc[anio] = (acc[anio] || 0) + 1;
+        return acc;
+    }, {});
+
+    let anioMasFrecuente = Number(
+        Object.keys(contador).reduce((a, b) => contador[a] > contador[b] ? a : b)
+    );
+
+    let diferencia = Math.max(...anios) - Math.min(...anios);
+
+    let estadisticas = {
+        promedio,
+        anioMasFrecuente,
+        diferencia
+    };
+
+    console.log(estadisticas);
+    return estadisticas;
+}
+
+/**
+ * Se implementó una función que calcula estadísticas sobre los años
+ * de publicación de los libros.
+ *
+ * Se utilizó map, reduce y el objeto Math para obtener:
+ * - Promedio de años
+ * - Año más frecuente
+ * - Diferencia entre el libro más antiguo y el más nuevo
+ */
+
+/**
+ * ======================================================
  * ✅ 8) MANEJO DE CADENAS
  * ======================================================
  * normalizarDatos()
