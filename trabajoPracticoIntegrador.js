@@ -378,5 +378,46 @@ function generarReporteLibros() {
  * La función devuelve un objeto con toda la información y además la muestra por consola.
  */
 
+/**
+ * ======================================================
+ * ✅ 8) MANEJO DE CADENAS
+ * ======================================================
+ * normalizarDatos()
+ * Normaliza títulos de libros, nombres de autores y emails de usuarios.
+ */
+
+function normalizarDatos() {
+    // ✅ 1) Normalizamos datos de libros
+    for (let i = 0; i < libros.length; i++) {
+        // Títulos a mayúsculas
+        libros[i].titulo = libros[i].titulo.toUpperCase();
+
+        // Eliminamos espacios en autores
+        libros[i].autor = libros[i].autor.trim();
+    }
+
+    // ✅ 2) Normalizamos emails de usuarios
+    for (let i = 0; i < usuarios.length; i++) {
+        usuarios[i].email = usuarios[i].email.toLowerCase().trim();
+    }
+
+    // ✅ 3) Confirmación
+    console.log("🔧 Datos normalizados correctamente.");
+}
+
+/**
+ * En este punto se desarrolló una función para normalizar los datos
+ * del sistema de biblioteca.
+ *
+ * Se realizaron las siguientes acciones:
+ * - Conversión de los títulos de libros a mayúsculas.
+ * - Eliminación de espacios innecesarios en los nombres de autores.
+ * - Normalización de los emails de los usuarios a minúsculas.
+ *
+ * Se aplicaron métodos de strings como toUpperCase(), trim() y toLowerCase(),
+ * recorriendo los arrays correspondientes.
+ */
+
+
 
 
