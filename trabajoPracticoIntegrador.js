@@ -418,6 +418,111 @@ function normalizarDatos() {
  * recorriendo los arrays correspondientes.
  */
 
+/**
+ * ======================================================
+ * ✅ 9) INTERFAZ DE USUARIO POR CONSOLA
+ * ======================================================
+ * menuPrincipal()
+ * Muestra un menú de opciones y permite interactuar con el sistema.
+ */
+
+function menuPrincipal() {
+    let opcion = "";
+
+    // El menú se repite hasta que el usuario elija salir
+    while (opcion !== "0") {
+        console.log("\n📚 SISTEMA DE GESTIÓN DE BIBLIOTECA");
+        console.log("1️⃣ Registrar usuario");
+        console.log("2️⃣ Mostrar todos los usuarios");
+        console.log("3️⃣ Buscar usuario por email");
+        console.log("4️⃣ Borrar usuario");
+        console.log("5️⃣ Prestar libro");
+        console.log("6️⃣ Devolver libro");
+        console.log("7️⃣ Generar reporte de libros");
+        console.log("8️⃣ Normalizar datos");
+        console.log("0️⃣ Salir");
+
+        opcion = prompt("👉 Elegí una opción: ");
+
+        switch (opcion) {
+            case "1": {
+                let nombre = prompt("Nombre del usuario: ");
+                let email = prompt("Email del usuario: ");
+                registrarUsuario(nombre, email);
+                break;
+            }
+
+            case "2": {
+                console.log("👥 Usuarios registrados:");
+                console.log(mostrarTodosLosUsuarios());
+                break;
+            }
+
+            case "3": {
+                let email = prompt("Ingresá el email a buscar: ");
+                buscarUsuario(email);
+                break;
+            }
+
+            case "4": {
+                let nombre = prompt("Nombre del usuario a borrar: ");
+                let email = prompt("Email del usuario a borrar: ");
+                borrarUsuario(nombre, email);
+                break;
+            }
+
+            case "5": {
+                let idLibro = Number(prompt("ID del libro a prestar: "));
+                let idUsuario = Number(prompt("ID del usuario: "));
+                prestarLibro(idLibro, idUsuario);
+                break;
+            }
+
+            case "6": {
+                let idLibro = Number(prompt("ID del libro a devolver: "));
+                let idUsuario = Number(prompt("ID del usuario: "));
+                devolverLibro(idLibro, idUsuario);
+                break;
+            }
+
+            case "7": {
+                generarReporteLibros();
+                break;
+            }
+
+            case "8": {
+                normalizarDatos();
+                break;
+            }
+
+            case "0": {
+                console.log("👋 Saliendo del sistema. ¡Gracias!");
+                break;
+            }
+
+            default: {
+                console.log("❌ Opción inválida. Intentá nuevamente.");
+            }
+        }
+    }
+}
+
+// ▶️ Para iniciar el sistema
+menuPrincipal();
+
+/**
+ * En este punto se desarrolló un menú interactivo por consola
+ * que permite al usuario utilizar las distintas funcionalidades
+ * del sistema de gestión de biblioteca.
+ *
+ * El menú se ejecuta dentro de un ciclo while y utiliza una
+ * estructura switch para manejar las opciones seleccionadas.
+ *
+ * Se utilizó la librería prompt-sync para la interacción con el usuario
+ * y se integraron las funciones desarrolladas en los puntos anteriores.
+ */
+
+
 
 
 
