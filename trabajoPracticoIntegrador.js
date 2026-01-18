@@ -287,4 +287,96 @@ function devolverLibro(idLibro, idUsuario) {
  * - Manipulación de objetos y estados (disponible).
  */
 
+/**
+ * ======================================================
+ * ✅ 5) REPORTES
+ * ======================================================
+ * 5a) generarReporteLibros()
+ * Usamos métodos avanzados de arrays:
+ * - filter() para seleccionar libros según condición
+ * - reduce() para acumular cantidades / agrupar
+ * - map() para transformar datos
+ *
+ * El reporte debe incluir:
+ * ✔ Cantidad total de libros
+ * ✔ Cantidad de libros prestados
+ * ✔ Cantidad de libros por género
+ * ✔ Libro más antiguo y más nuevo
+ */
+
+function generarReporteLibros() {
+    // ✅ 1) Cantidad total de libros
+    let totalLibros = libros.length;
+
+    // ✅ 2) Cantidad de libros prestados (no disponibles)
+    let librosPrestados = libros.filter(libro => libro.disponible === false);
+    let cantidadPrestados = librosPrestados.length;
+
+    // ✅ 3) Cantidad de libros por género
+    // reduce crea un objeto donde cada clave es el género y el valor es la cantidad
+    let cantidadPorGenero = libros.reduce((acumulador, libro) => {
+        let genero = libro.genero;
+
+        // Si ese género todavía no existe en el acumulador, lo inicializamos en 0
+        if (!acumulador[genero]) {
+            acumulador[genero] = 0;
+        }
+
+        // Sumamos 1 por cada libro encontrado en ese género
+        acumulador[genero] += 1;
+
+        return acumulador;
+    }, {});
+
+    // ✅ 4) Libro más antiguo y más nuevo (por año)
+    // Usamos reduce para comparar años
+    let libroMasAntiguo = libros.reduce((min, libro) => {
+        return libro.anio < min.anio ? libro : min;
+    }, libros[0]);
+
+    let libroMasNuevo = libros.reduce((max, libro) => {
+        return libro.anio > max.anio ? libro : max;
+    }, libros[0]);
+
+    // ✅ 5) Armamos el objeto "reporte" con toda la info
+    let reporte = {
+        totalLibros: totalLibros,
+        cantidadPrestados: cantidadPrestados,
+        cantidadPorGenero: cantidadPorGenero,
+        libroMasAntiguo: {
+            titulo: libroMasAntiguo.titulo,
+            autor: libroMasAntiguo.autor,
+            anio: libroMasAntiguo.anio
+        },
+        libroMasNuevo: {
+            titulo: libroMasNuevo.titulo,
+            autor: libroMasNuevo.autor,
+            anio: libroMasNuevo.anio
+        }
+    };
+
+    // ✅ 6) Mostramos el reporte en consola de forma clara
+    console.log("📊 REPORTE DE LIBROS");
+    console.log("📚 Total de libros:", reporte.totalLibros);
+    console.log("📕 Libros prestados:", reporte.cantidadPrestados);
+    console.log("🗂️ Libros por género:", reporte.cantidadPorGenero);
+    console.log("⏳ Libro más antiguo:", reporte.libroMasAntiguo);
+    console.log("🚀 Libro más nuevo:", reporte.libroMasNuevo);
+
+    // ✅ 7) Devolvemos el reporte
+    return reporte;
+}
+
+/**
+ * En este punto se generó un reporte general del estado de los libros usando métodos avanzados de arrays.
+ *
+ * Se utilizó:
+ * - filter() para contar libros prestados (no disponibles).
+ * - reduce() para agrupar y contar libros por género.
+ * - reduce() también para encontrar el libro más antiguo y el más nuevo según el año.
+ *
+ * La función devuelve un objeto con toda la información y además la muestra por consola.
+ */
+
+
 
