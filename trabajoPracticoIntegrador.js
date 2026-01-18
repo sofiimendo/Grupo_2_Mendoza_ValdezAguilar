@@ -522,6 +522,33 @@ menuPrincipal();
  * y se integraron las funciones desarrolladas en los puntos anteriores.
  */
 
+/**
+ * ======================================================
+ * 📝 PUNTO 10: COMENTANDO MI CÓDIGO
+ * ======================================================
+ *
+ * A lo largo de este trabajo práctico integrador se desarrolló
+ * un sistema de gestión de biblioteca aplicando los conceptos
+ * fundamentales de JavaScript vistos durante el curso.
+ *
+ * El código fue organizado por puntos, respetando la consigna
+ * y aplicando buenas prácticas de nomenclatura, indentación
+ * y comentarios explicativos.
+ *
+ * Cada funcionalidad fue implementada de manera modular,
+ * utilizando funciones claras y reutilizables, estructuras
+ * de control, arrays, objetos, métodos de strings y métodos
+ * avanzados de arrays.
+ *
+ * Se priorizó que el código sea legible, entendible y fácil
+ * de mantener, explicando paso a paso qué se realiza en cada
+ * sección, tal como se trabajó durante las clases.
+ *
+ * Este trabajo fue realizado de forma grupal por:
+ * ✔ Sofía Macarena Mendoza
+ * ✔ Yamila Valdez Aguilar
+ */
+
 
 
 
