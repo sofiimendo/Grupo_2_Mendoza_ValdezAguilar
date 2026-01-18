@@ -54,6 +54,55 @@ let usuarios = [
 
 /**
  * ======================================================
+ * ✅ 2) GESTIÓN DE LIBROS
+ * ======================================================
+ */
+
+function agregarLibro(id, titulo, autor, anio, genero) {
+    libros.push({
+        id,
+        titulo,
+        autor,
+        anio,
+        genero,
+        disponible: true
+    });
+}
+
+function buscarLibro(criterio, valor) {
+    return libros.filter(libro => libro[criterio].toLowerCase().includes(valor.toLowerCase()));
+}
+
+function ordenarLibros(criterio) {
+    for (let i = 0; i < libros.length - 1; i++) {
+        for (let j = 0; j < libros.length - i - 1; j++) {
+            if (libros[j][criterio] > libros[j + 1][criterio]) {
+                let temp = libros[j];
+                libros[j] = libros[j + 1];
+                libros[j + 1] = temp;
+            }
+        }
+    }
+    console.log(libros);
+}
+
+function borrarLibro(id) {
+    libros = libros.filter(libro => libro.id !== id);
+}
+
+
+/**
+ * Se implementaron funciones para administrar el catálogo de libros,
+ * permitiendo agregar, buscar, ordenar y eliminar libros del sistema.
+ *
+ * Se utilizó búsqueda lineal y el algoritmo de ordenamiento burbuja,
+ * aplicando ciclos y condicionales.
+ *
+ */
+
+
+/**
+ * ======================================================
  * ✅ 3) GESTIÓN DE USUARIOS
  * ======================================================
  */
