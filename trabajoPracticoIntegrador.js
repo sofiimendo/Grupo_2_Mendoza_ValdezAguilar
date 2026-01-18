@@ -15,6 +15,45 @@ const prompt = require("prompt-sync")({ sigint: true });
 
 /**
  * ======================================================
+ * ✅ 1) ESTRUCTURA DE DATOS
+ * ======================================================
+ */
+
+// 📚 Array de libros
+let libros = [
+    { id: 1, titulo: "Cien años de soledad", autor: "Gabriel García Márquez", anio: 1967, genero: "Novela", disponible: true },
+    { id: 2, titulo: "Rayuela", autor: "Julio Cortázar", anio: 1963, genero: "Novela", disponible: true },
+    { id: 3, titulo: "El principito", autor: "Antoine de Saint-Exupéry", anio: 1943, genero: "Fábula", disponible: true },
+    { id: 4, titulo: "Don Quijote", autor: "Miguel de Cervantes", anio: 1605, genero: "Novela", disponible: true },
+    { id: 5, titulo: "1984", autor: "George Orwell", anio: 1949, genero: "Distopía", disponible: true },
+    { id: 6, titulo: "Fahrenheit 451", autor: "Ray Bradbury", anio: 1953, genero: "Ciencia ficción", disponible: true },
+    { id: 7, titulo: "Orgullo y prejuicio", autor: "Jane Austen", anio: 1813, genero: "Romance", disponible: true },
+    { id: 8, titulo: "It", autor: "Stephen King", anio: 1986, genero: "Terror", disponible: true },
+    { id: 9, titulo: "Harry Potter", autor: "J K Rowling", anio: 1997, genero: "Fantasía", disponible: true },
+    { id: 10, titulo: "El Hobbit", autor: "J R R Tolkien", anio: 1937, genero: "Fantasía", disponible: true }
+];
+
+// 👤 Array de usuarios
+let usuarios = [
+    { id: 1, nombre: "Sofía Mendoza", email: "sofimmendoza@gmail.com", librosPrestados: [] },
+    { id: 2, nombre: "Yamila Valdez", email: "yamivaldez@gmail.com", librosPrestados: [] },
+    { id: 3, nombre: "Ana Pérez", email: "ana@gmail.com", librosPrestados: [] },
+    { id: 4, nombre: "Juan López", email: "juan@gmail.com", librosPrestados: [] },
+    { id: 5, nombre: "María Gómez", email: "maria@gmail.com", librosPrestados: [] }
+];
+
+/**
+ * Se definieron los arrays principales del sistema: libros y usuarios.
+ * Cada libro y usuario fue representado como un objeto con propiedades
+ * específicas que permiten su correcta gestión dentro del sistema.
+ *
+ * Este punto constituye la base de datos sobre la cual operan el resto
+ * de las funcionalidades del sistema.
+ *
+ */
+
+/**
+ * ======================================================
  * ✅ 3) GESTIÓN DE USUARIOS
  * ======================================================
  */
