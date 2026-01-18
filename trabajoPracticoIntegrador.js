@@ -468,6 +468,32 @@ function generarReporteLibros() {
 
 /**
  * ======================================================
+ * ✅ 6) IDENTIFICACIÓN AVANZADA DE LIBROS
+ * ======================================================
+ */
+
+function librosConPalabrasEnTitulo() {
+    let resultado = libros.filter(libro => {
+        let titulo = libro.titulo.trim();
+        let soloLetras = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/.test(titulo);
+        let palabras = titulo.split(" ");
+        return palabras.length > 1 && soloLetras;
+    }).map(libro => libro.titulo);
+
+    console.log(resultado);
+    return resultado;
+}
+
+/**
+ * Se desarrolló una función que identifica libros cuyos títulos
+ * contienen más de una palabra y solo letras.
+ *
+ * Se utilizaron métodos de arrays (filter, map) y métodos de strings
+ * junto con una expresión regular para validar los títulos.
+ */
+
+/**
+ * ======================================================
  * ✅ 8) MANEJO DE CADENAS
  * ======================================================
  * normalizarDatos()
