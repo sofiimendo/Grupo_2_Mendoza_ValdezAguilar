@@ -126,7 +126,7 @@ git clone https://github.com/sofiimendo/Grupo_2_Mendoza_ValdezAguilar
 npm install prompt-sync
 
 - Ejecutar el archivo principal:
-node trabajoPracticoIntegrador_SofiaMendoza.js
+node trabajoPracticoIntegrador.js
 
 ## 🧠 Aprendizajes destacados
 Durante el desarrollo de este proyecto se fortalecieron habilidades como:
