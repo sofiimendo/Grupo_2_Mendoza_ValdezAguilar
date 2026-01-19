@@ -120,7 +120,7 @@ Generación de reportes utilizando métodos avanzados de arrays:
 ## ▶️ Cómo ejecutar el proyecto
 
 1. Clonar el repositorio:
-git clone https://github.com/sofiimendo/nombre-del-repo.git
+git clone https://github.com/sofiimendo/Grupo_2_Mendoza_ValdezAguilar
 
 - Instalar dependencias:
 npm install prompt-sync
